@@ -6,9 +6,13 @@ D.D.D. is a game where you follow someone trough their live and see how it start
 Some stories can be sad and unfair while others are just your average old man who just got old but didn't have the best ending. 
 
 ### Planning
-| Stage | ----- |
-| 1 | Basic Mechanicks (walking, dialogue, world) | 
-| 2 | Butterfly Effect System creation and implementation |
+| Stage | Desc |
+| ----- | ----- |
+| Basic Mechanicks (walking, dialogue, world) | 
+| Butterfly Effect System creation and implementation |
+| 1 |
+| 2 |
+
 ## Inspiration
 I always wanted to make a story telling game and have had a lot of idea's.
 I though about how you always hear about death on TV, depression at school.
