@@ -6,7 +6,7 @@ D.D.D. is a game where you follow someone trough their live and see how it start
 Some stories can be sad and unfair while others are just your average old man who just got old but didn't have the best ending. 
 
 ### Planning
-| Stage | |  
+| Stage |
 | 1 | Basic Mechanicks (walking, dialogue, world) | 
 | 2 | Butterfly Effect System creation and implementation |
 ## Inspiration
