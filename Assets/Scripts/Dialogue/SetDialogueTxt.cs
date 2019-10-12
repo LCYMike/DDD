@@ -6,7 +6,7 @@ using System;
 
 public class SetDialogueTxt : MonoBehaviour
 {
-    public Action<string[]> displayText;
+    public Action<string[], bool> displayText;
     public Action abortDialogue;
     private string[] _sentences;
     //private List<string> _texts = new List<string>();
@@ -15,6 +15,7 @@ public class SetDialogueTxt : MonoBehaviour
     private int index = 0;
     private bool _isTyping = false;
     private bool skipTyping = false;
+    private bool showContinueBtn = true;
 
     public GameObject continueBtn;
     public GameObject background;
@@ -46,8 +47,9 @@ public class SetDialogueTxt : MonoBehaviour
         }
     }
 
-    private void StartText(string[] _texts)
+    private void StartText(string[] _texts, bool _hasContinueBtn)
     {
+        showContinueBtn = _hasContinueBtn;
         index = 0;
         _sentences = _texts;
         background.SetActive(true);
@@ -93,7 +95,10 @@ public class SetDialogueTxt : MonoBehaviour
         }
         _isTyping = false;
         skipTyping = false;
-        continueBtn.SetActive(true);
+        if (showContinueBtn)
+        {
+            continueBtn.SetActive(true);
+        }
     }
 
     public void QuitDialogue()

@@ -10,9 +10,9 @@ public class DialogueTrigger : MonoBehaviour
 
     private float _range = 3f;
 
+    public bool hasContinueBtn = true;
     public bool destroyOnFinish = false;
     private bool isActive = false;
-
     public Action finishDialogue;
 
     private GameObject _player;
@@ -50,7 +50,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _dialogue.displayText(texts);
+        _dialogue.displayText(texts, hasContinueBtn);
         isActive = true;
         _rend.enabled = false;
         _col.enabled = false;
