@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 131371824}
   m_Layer: 0
   m_Name: A
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,6 +467,8 @@ MonoBehaviour:
   texts:
   - Hi!
   - You suck...
+  destroyOnFinish: 0
+  isActive: 0
 --- !u!1 &551403866
 GameObject:
   m_ObjectHideFlags: 0

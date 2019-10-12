@@ -21,6 +21,8 @@ public class SetDialogueTxt : MonoBehaviour
 
     private Text _txt;
 
+    private DialogueTrigger _dialogueTrigger;
+
     void Start()
     {
         background.SetActive(false);
@@ -28,6 +30,7 @@ public class SetDialogueTxt : MonoBehaviour
         displayText += StartText;
         abortDialogue += QuitDialogue;
         _txt = GetComponent<Text>();
+        _dialogueTrigger = FindObjectOfType<DialogueTrigger>();
     }
 
     void Update()
@@ -63,6 +66,12 @@ public class SetDialogueTxt : MonoBehaviour
         } else
         {
             _txt.text = "";
+            
+            if(_dialogueTrigger.finishDialogue != null)
+            {
+                _dialogueTrigger.finishDialogue();
+            }
+
             background.SetActive(false);
             _sentences = null;
         }
