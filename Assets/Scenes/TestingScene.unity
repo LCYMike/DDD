@@ -507,8 +507,8 @@ MonoBehaviour:
   target: {fileID: 173849638}
   offSet: {x: 0, y: 3}
   _UseRestrictions: 1
-  minXY: {x: -8, y: -3.2}
-  maxXY: {x: 8, y: -0.2}
+  minXY: {x: -8, y: -0.75}
+  maxXY: {x: 8, y: 2.75}
 --- !u!1 &962031392
 GameObject:
   m_ObjectHideFlags: 0

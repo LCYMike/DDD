@@ -21,5 +21,11 @@ I want to make a game that makes you the player decide how you live your live.
 Work up to something just to have something terrible happen and see it all disapear.
 This experience may be be very dark desaturated and emotional.
 
+<<<<<<< HEAD
 ## Project planning and organization
 [Trello](https://trello.com/b/v16yD2Fl/ddd)
+=======
+
+## Spesifications
+Unity version: 2019.1.14f1
+>>>>>>> dialogue
