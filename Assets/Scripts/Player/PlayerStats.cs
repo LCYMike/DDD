@@ -5,8 +5,8 @@ using System;
 
 public class PlayerStats : MonoBehaviour
 {
-    private int _lvl = 0;
-    private float _hp = 100;
+    public int _lvl = 0;
+    public float _hp = 100;
     private float _hpCheck;
 
     public Action<float> hpChange;
