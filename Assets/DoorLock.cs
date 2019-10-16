@@ -24,11 +24,18 @@ public class DoorLock : MonoBehaviour
     {
         if(key == _item.name)
         {
+            StartCoroutine(DoorRotation());
+        }
+    }
+
+    IEnumerator DoorRotation()
+    {
             for (int i = 0; i < 90; i++)
             {
-                //leftDoor.gameObject.transform.rotation;
+                leftDoor.gameObject.transform.Rotate(new Vector3(leftDoor.gameObject.transform.rotation.x, leftDoor.gameObject.transform.rotation.y + 0.8f, leftDoor.gameObject.transform.rotation.z));
+                rightDoor.gameObject.transform.Rotate(new Vector3(rightDoor.gameObject.transform.rotation.x, rightDoor.gameObject.transform.rotation.y - 0.8f, rightDoor.gameObject.transform.rotation.z));
+                yield return new WaitForSeconds(2 / 90);
             }
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
