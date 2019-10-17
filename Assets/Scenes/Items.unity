@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    name: Key
+    name: Main Gate Key
     isUnlocked: 1
     lvl: 0
     weight: 0
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10848294108b6dd43b8dbe1148a60c51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftDoor: {fileID: 0}
-  rightDoor: {fileID: 0}
-  key: 
+  leftDoor: {fileID: 599760571}
+  rightDoor: {fileID: 380942586}
+  key: Main Gate Key
 --- !u!61 &1267089359
 BoxCollider2D:
   m_ObjectHideFlags: 0
