@@ -9,10 +9,9 @@ public class DoorLock : MonoBehaviour
 
     public Action<ItemStats> openDoor;
 
-    public GameObject leftDoor;
-    public GameObject rightDoor;
-
     public TextMesh hintTxt;
+
+    public Unlock unlockScript;
 
     private bool _isUnlocked = false;
 
@@ -23,17 +22,6 @@ public class DoorLock : MonoBehaviour
         hintTxt.text = "";
         _inv = FindObjectOfType<Inventory>();
     }
-    
-
-    IEnumerator DoorRotation()
-    {
-            for (int i = 0; i < 90; i++)
-            {
-                leftDoor.gameObject.transform.Rotate(new Vector3(0f, 1f, 0f));
-                rightDoor.gameObject.transform.Rotate(new Vector3(0f, -1f, 0f));
-                yield return new WaitForSeconds(2 / 90);
-            }
-    }
 
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -43,7 +31,7 @@ public class DoorLock : MonoBehaviour
             var inv = collision.gameObject.GetComponent<Inventory>();
 
             if (inv.GetItem(new ItemStats(key)) != null){
-                StartCoroutine(DoorRotation());
+                unlockScript.UnlockDoor();
                 _isUnlocked = true;
             }
             else
