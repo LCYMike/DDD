@@ -7,10 +7,7 @@ public class DoorLock : MonoBehaviour
 {
     private Inventory _inv;
 
-    public Action<ItemStats> openDoor;
-
-    public GameObject leftDoor;
-    public GameObject rightDoor;
+    public UnlockScript unlockScript;
 
     public TextMesh hintTxt;
 
@@ -23,16 +20,21 @@ public class DoorLock : MonoBehaviour
         hintTxt.text = "";
         _inv = FindObjectOfType<Inventory>();
     }
-    
 
-    IEnumerator DoorRotation()
+    private void Unlock(ItemStats _item)
     {
-            for (int i = 0; i < 90; i++)
+        Debug.Log(_item);
+        if (_item != null)
+        {
+            if(_item.name == key)
             {
-                leftDoor.gameObject.transform.Rotate(new Vector3(0f, 1f, 0f));
-                rightDoor.gameObject.transform.Rotate(new Vector3(0f, -1f, 0f));
-                yield return new WaitForSeconds(2 / 90);
+                _isUnlocked = true;
+                unlockScript.Unlock();
             }
+        } else
+        {
+            hintTxt.text = "Find the Main Gate Key";
+        }
     }
 
 
@@ -40,16 +42,14 @@ public class DoorLock : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Inventory>() && !_isUnlocked)
         {
-            var inv = collision.gameObject.GetComponent<Inventory>();
-
-            if (inv.GetItem(new ItemStats(key)) != null){
-                StartCoroutine(DoorRotation());
-                _isUnlocked = true;
-            }
-            else
+            if(_inv != null)
             {
-            hintTxt.text = "Door is locked\n Find the Key!";
+                Unlock(_inv.GetItem(new ItemStats(key)));
+            } else
+            {
+                Debug.LogError("Couldn't send door key check");
             }
+
         }
     }
 
@@ -60,5 +60,6 @@ public class DoorLock : MonoBehaviour
             hintTxt.text = "";
         }
     }
+
 
 }
