@@ -7,9 +7,15 @@ public class DoorLock : MonoBehaviour
 {
     private Inventory _inv;
 
+<<<<<<< HEAD:Assets/Scripts/Doors/DoorLock.cs
     public UnlockScript unlockScript;
+=======
+    public Action<ItemStats> openDoor;
+>>>>>>> 4cbb339649c924a6e0fbf3e83eeb39c6357731e3:Assets/Scripts/Doors/DoorLock.cs
 
     public TextMesh hintTxt;
+
+    public Unlock unlockScript;
 
     private bool _isUnlocked = false;
 
@@ -20,6 +26,7 @@ public class DoorLock : MonoBehaviour
         hintTxt.text = "";
         _inv = FindObjectOfType<Inventory>();
     }
+<<<<<<< HEAD:Assets/Scripts/Doors/DoorLock.cs
 
     private void Unlock(ItemStats _item)
     {
@@ -36,16 +43,28 @@ public class DoorLock : MonoBehaviour
             hintTxt.text = "Find the Main Gate Key";
         }
     }
+=======
+>>>>>>> 4cbb339649c924a6e0fbf3e83eeb39c6357731e3:Assets/Scripts/Doors/DoorLock.cs
 
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Inventory>() && !_isUnlocked)
         {
+<<<<<<< HEAD:Assets/Scripts/Doors/DoorLock.cs
             if(_inv != null)
             {
                 Unlock(_inv.GetItem(new ItemStats(key)));
             } else
+=======
+            var inv = collision.gameObject.GetComponent<Inventory>();
+
+            if (inv.GetItem(new ItemStats(key)) != null){
+                unlockScript.UnlockDoor();
+                _isUnlocked = true;
+            }
+            else
+>>>>>>> 4cbb339649c924a6e0fbf3e83eeb39c6357731e3:Assets/Scripts/Doors/DoorLock.cs
             {
                 Debug.LogError("Couldn't send door key check");
             }
