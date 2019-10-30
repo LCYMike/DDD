@@ -11,8 +11,6 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private List<ItemStats> _items;
 
-    public Action<ItemStats> unlockDoor;
-
     ItemStats item;
 
     private void Start()
