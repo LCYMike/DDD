@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 8cbbf250be0d4594192fa1e90e6b377a
+guid: b45bda4a39ae67d4697f69e80a3f2aa3
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6888708756529517008
-    second: PlayerSpriteSheet_0
-  - first:
-      213: 2788089956977029842
-    second: PlayerSpriteSheet_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -46,9 +40,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
-  spriteExtrude: 0
-  spriteMeshType: 0
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 400
@@ -99,53 +93,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87207604d83cd3944a953ba37e364762
-      internalID: 6888708756529517008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PlayerSpriteSheet_1
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 0
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06cd10cdd0a555444b3f4179b16098df
-      internalID: 2788089956977029842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5fcc090e41d9b1849be6b564e6f2f069
+    spriteID: 1f8d4c0f5212df545baf48480a1e7daa
     internalID: 0
     vertices: []
     indices: 

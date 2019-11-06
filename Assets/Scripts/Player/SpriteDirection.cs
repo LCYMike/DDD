@@ -7,11 +7,11 @@ public class SpriteDirection : MonoBehaviour
 
     private PlayerMovement2D _mov;
 
-    public SpriteRenderer rend;
+    private SpriteRenderer _rend;
 
     void Start()
     {
-        rend = GetComponent<SpriteRenderer>();
+        _rend = GetComponent<SpriteRenderer>();
         _mov = GetComponent<PlayerMovement2D>();
         _mov.playerDir += SetX;
     }
@@ -21,11 +21,11 @@ public class SpriteDirection : MonoBehaviour
     {
         if(_dir < 0)
         {
-            rend.flipX = true;
+            _rend.flipX = true;
         }
         else if(_dir > 0)
         {
-            rend.flipX = false;
+            _rend.flipX = false;
         }
     }
 }
