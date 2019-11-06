@@ -5,27 +5,30 @@ Small Storytelling Game
 D.D.D. is a game where you follow someone trough their live and see how it starts and ends.
 Some stories can be sad and unfair while others are just your average old man who just got old but didn't have the best ending. 
 
-### Planning
-| Stage | Desc |
-| ----- | ----- |
-| 1 | Basic Mechanicks (walking, dialogue, world) | 
-| 2 | Butterfly Effect System creation and implementation |
+### Learning Goals
+| Technique / Mechanic | Description | Status |
+| ----- | ----- | ----- |
+| Obstacles a player can hide behind | objects the player can walk up to and hide. if the enemy is far enough it won't see you hideand return but if it did see you hide ti'll keep chasing the player. | Done |
+| Inventory and Items | Player can pick up Items and use these for example, keys, flash light and / or weapong | Done |
+| locked Doors | A gate or door that requires the player to hold a specific item to open up | Done |
+|  |  |  |
 
 ## Inspiration
-I always wanted to make a story telling game and have had a lot of idea's.
-I though about how you always hear about death on TV, depression at school.
-I tried putting myself in someone's shoes, someone who is in this dreadful situation...
-A pit of despair.
+I always wanted to make a story telling game about someone who is in this dreadful situation...
+A pit of despair. someone who can't fight back but only run and hide.
+I want to make a game that makes you the player decide the story.
+Depending on those choises good things can happen and it can all disapear.
+This experience is supposed be very grim and desaturated. 
 
-I want to make a game that makes you the player decide how you live your live.
-Work up to something just to have something terrible happen and see it all disapear.
-This experience may be be very dark desaturated and emotional.
 
-<<<<<<< HEAD
 ## Project planning and organization
 [Trello](https://trello.com/b/v16yD2Fl/ddd)
-=======
+[Documentation](https://github.com/MikeRaadsheer/DDD/tree/enemy/documentation/)
 
-## Spesifications
+## Tools Used
+[Trello](https://trello.com/)
+[Draw.io (_desktop_)](https://draw.io/)
+[Open Office 365](https://products.office.com/en/excel)
+
+## Project Spesifications
 Unity version: 2019.1.14f1
->>>>>>> dialogue
