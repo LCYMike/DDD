@@ -8,17 +8,17 @@ Some stories can be sad and unfair while others are just your average old man wh
 ### Learning Goals
 | Technique / Mechanic | Description | Status |
 | ----- | ----- | ----- |
-| Obstacles a player can hide behind | objects the player can walk up to and hide. if the enemy is far enough it won't see you hideand return but if it did see you hide ti'll keep chasing the player. | Done |
-| Inventory and Items | Player can pick up Items and use these for example, keys, flash light and / or weapong | Done |
+| Obstacles a player can hide behind | objects the player can walk up to and hide. if the enemy is far enough it won't see you hideand return but if it did see you hide it'll keep chasing the player. | Done |
+| Inventory and Items | Player can pick up Items and use these for example, keys, flash light and / or weapons | Done |
 | locked Doors | A gate or door that requires the player to hold a specific item to open up | Done |
 |  |  |  |
 
 ## Inspiration
 I always wanted to make a story telling game about someone who is in this dreadful situation...
-A pit of despair. someone who can't fight back but only run and hide.
+A pit of despair. Someone who can't fight back but only run and hide.
 I want to make a game that makes you the player decide the story.
-Depending on those choises good things can happen and it can all disapear.
-This experience is supposed be very grim and desaturated. 
+Depending on those choises good things can happen and it can all disappear.
+This experience is supposed be very grim and unsaturated. 
 
 
 ## Project planning and organization
@@ -26,9 +26,9 @@ This experience is supposed be very grim and desaturated.
 [Documentation](https://github.com/MikeRaadsheer/DDD/tree/enemy/documentation/)
 
 ## Tools Used
-[Trello](https://trello.com/)
-[Draw.io (_desktop_)](https://draw.io/)
-[Open Office 365](https://products.office.com/en/excel)
+[Trello](https://trello.com/)  
+[Draw.io (_desktop_)](https://draw.io/)  
+[Open Office 365](https://products.office.com/en/excel)  
 
 ## Project Spesifications
 Unity version: 2019.1.14f1
