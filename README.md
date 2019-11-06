@@ -22,13 +22,15 @@ This experience is supposed be very grim and unsaturated.
 
 
 ## Project planning and organization
-[Trello](https://trello.com/b/v16yD2Fl/ddd)
-[Documentation](https://github.com/MikeRaadsheer/DDD/tree/enemy/documentation/)
+[Trello](https://trello.com/b/v16yD2Fl/ddd)  
+[Documentation](https://github.com/MikeRaadsheer/DDD/tree/development/documentation/)
 
 ## Tools Used
 [Trello](https://trello.com/)  
 [Draw.io (_desktop_)](https://draw.io/)  
 [Open Office 365](https://products.office.com/en/excel)  
+[Gimp](https://www.gimp.org/downloads/)  
 
-## Project Spesifications
+
+## Project Specifications
 Unity version: 2019.1.14f1
