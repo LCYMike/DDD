@@ -14,6 +14,7 @@ public class DoorLock : MonoBehaviour
     private bool _isUnlocked = false;
 
     public string key = "key-name";
+    public string txtValue = "Find Key";
 
     private void Start()
     {
@@ -33,7 +34,7 @@ public class DoorLock : MonoBehaviour
             }
         } else
         {
-            hintTxt.text = "Find the Main Gate Key";
+            hintTxt.text = txtValue;
         }
     }
 

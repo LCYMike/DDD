@@ -6,39 +6,33 @@ using System;
 
 public class SetDialogueTxt : MonoBehaviour
 {
-    public Action<string[], bool> displayText;
-    public Action abortDialogue;
-    private string[] _sentences;
-    //private List<string> _texts = new List<string>();
+    public Text _txt;
+    public GameObject continueBtn;
+    public Image background;
+    public Action<string[], bool> SetDialogue;
 
-    private float _typeSpeed = 0.15f;
+    public float _typeSpeed = 0.15f;
+
+    private string[] _sentences;
     private int index = 0;
     private bool _isTyping = false;
-    private bool skipTyping = false;
-    private bool showContinueBtn = true;
+    private bool _skipTyping = false;
+    private bool  _showContinueBtn = true;
 
-    public GameObject continueBtn;
-    public GameObject background;
-
-    private Text _txt;
-
-    private DialogueTrigger _dialogueTrigger;
 
     void Start()
     {
-        background.SetActive(false);
+        background.enabled = false;
         continueBtn.SetActive(false);
-        displayText += StartText;
-        abortDialogue += QuitDialogue;
-        _txt = GetComponent<Text>();
-        _dialogueTrigger = FindObjectOfType<DialogueTrigger>();
+        _txt.text = "";
+        SetDialogue += StartText;
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            skipTyping = true;
+            _skipTyping = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
@@ -49,32 +43,26 @@ public class SetDialogueTxt : MonoBehaviour
 
     private void StartText(string[] _texts, bool _hasContinueBtn)
     {
-        showContinueBtn = _hasContinueBtn;
+        background.enabled = true;
+        continueBtn.SetActive(true);
+         _showContinueBtn = _hasContinueBtn;
         index = 0;
         _sentences = _texts;
-        background.SetActive(true);
         StartCoroutine(TypeText());
     }
 
     public void NextText()
     {
-
         continueBtn.SetActive(false);
         index++;
-        Debug.Log(index + " " + _sentences.Length);
         if (index < _sentences.Length)
         {
             StartCoroutine(TypeText());
         } else
         {
             _txt.text = "";
-            
-            if(_dialogueTrigger.finishDialogue != null)
-            {
-                _dialogueTrigger.finishDialogue();
-            }
 
-            background.SetActive(false);
+            background.enabled = false;
             _sentences = null;
         }
     }
@@ -87,25 +75,23 @@ public class SetDialogueTxt : MonoBehaviour
         foreach (char letter in _sentences[index].ToCharArray())
         {
             _txt.text += letter;
-            if (skipTyping)
-            {
+            if (_skipTyping)            {
                 speed = 0;
             }
             yield return new WaitForSeconds(speed);
         }
         _isTyping = false;
-        skipTyping = false;
-        if (showContinueBtn)
+        _skipTyping = false;
+        if ( _showContinueBtn)
         {
             continueBtn.SetActive(true);
         }
     }
 
-    public void QuitDialogue()
+    public void FinishDialogue()
     {
         _txt.text = "";
-        background.SetActive(false);
-        _sentences = null;
+        background.enabled = false;
+        continueBtn.SetActive(false);
     }
-
 }
