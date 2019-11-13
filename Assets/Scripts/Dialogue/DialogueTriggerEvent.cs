@@ -44,7 +44,7 @@ public class DialogueTriggerEvent : MonoBehaviour
                     actions[i].Run();
                 }
             }
-            gameObject.SetActive(false);
+            gameObject.GetComponent<Collider2D>().enabled = false;
         }
     }
 }

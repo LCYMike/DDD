@@ -24,6 +24,7 @@ public class PlayerHide : MonoBehaviour
     private void ToggleIsHiding(bool _hiding)
     {
         _isHiding = _hiding;
+        Debug.Log(_hiding);
     }
 
     private void FixedUpdate()

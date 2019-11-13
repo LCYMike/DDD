@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+[RequireComponent(typeof(AudioSource))]
 public class SetDialogueTxt : MonoBehaviour
 {
     public Text _txt;
@@ -11,6 +12,8 @@ public class SetDialogueTxt : MonoBehaviour
     public Image background;
     public Action<string[], bool> SetDialogue;
     public Action<bool> isActive;
+
+    private AudioSource _aSrc;
 
     public float _typeSpeed = 0.15f;
 
@@ -28,16 +31,17 @@ public class SetDialogueTxt : MonoBehaviour
         continueBtn.SetActive(false);
         _txt.text = "";
         SetDialogue += StartText;
+        _aSrc = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _isTyping)
         {
-            _skipTyping = true;
+            //_skipTyping = true; // making sure fast typing is diasble using comments
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return) && !_isTyping && _isActive)
         {
             NextText();
         }
@@ -54,6 +58,11 @@ public class SetDialogueTxt : MonoBehaviour
 
     public void NextText()
     {
+        if (_isTyping)
+        {
+            return;
+        }
+
         continueBtn.SetActive(false);
         index++;
         if (index < _sentences.Length)
@@ -78,8 +87,9 @@ public class SetDialogueTxt : MonoBehaviour
         foreach (char letter in _sentences[index].ToCharArray())
         {
             _txt.text += letter;
+            _aSrc.Play();
             if (_skipTyping)            {
-                speed = 0;
+                speed = 0.05f;
             }
             yield return new WaitForSeconds(speed);
         }

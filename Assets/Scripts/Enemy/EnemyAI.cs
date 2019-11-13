@@ -14,6 +14,7 @@ public class EnemyAI : MonoBehaviour
     private bool _seePlayer = false;
     private bool _freeze = false;
     public bool _isActive = true;
+    public bool _isPlayerHiding = false;
 
     public EnemyIdleState idleBehaviour;
     public EnemyFollowState followBehaviour;
@@ -22,7 +23,7 @@ public class EnemyAI : MonoBehaviour
 
     private States _state;
 
-    private Transform _player;
+    private GameObject _player;
     private Obstacle[] _obstacles;
     private BoxCollider2D _col;
 
@@ -40,13 +41,13 @@ public class EnemyAI : MonoBehaviour
     {
         _dialogue = FindObjectOfType<SetDialogueTxt>();
         _dialogue.isActive += SetCanMove;
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        _player = GameObject.FindGameObjectWithTag("Player");
         _obstacles = FindObjectsOfType<Obstacle>();
         _col = GetComponent<BoxCollider2D>();
 
         for (int i = 0; i < _obstacles.Length; i++)
         {
-            _obstacles[i].playerHide += SetVisibility;
+            _obstacles[i].playerHide += SetHiding;
         }
     }
 
@@ -56,7 +57,7 @@ public class EnemyAI : MonoBehaviour
         if (_player == null) { idleBehaviour.Run(); return; }
         float _range = GetRange();
 
-        if (_range <= _spotRange && !_isChasing && gameObject.tag == "Enemy")
+        if (_range <= _spotRange && !_isChasing)
         {
             _isChasing = true;
             followTime = maxFollowTime;
@@ -67,7 +68,7 @@ public class EnemyAI : MonoBehaviour
             {
                 _isChasing = false;
             }
-            else if (followTime <= 0 && gameObject.tag != "Enemy")
+            else if (followTime <= 0)
             {
                 _isChasing = false;
             }
@@ -83,7 +84,7 @@ public class EnemyAI : MonoBehaviour
 
 
 
-            if (_range > _followRange || gameObject.tag != "Enemy") {
+            if (_range > _followRange) {
                 followTime -= Time.deltaTime;
             }
             else if (followTime != maxFollowTime)
@@ -115,20 +116,15 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void SetVisibility(bool _isVisible)
+    private void SetHiding(bool _isHiding)
     {
-        if (!_seePlayer && _isVisible) {
-            gameObject.tag = "Untagged";
-        }
-        else
-        {
-            gameObject.tag = "Enemy";
-        }
+        CircleCollider2D _col = GetComponent<CircleCollider2D>();
+        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), _isHiding);
     }
 
     private float GetRange()
     {
-        return Vector3.Distance(transform.position, _player.transform.position);
+        return Vector3.Distance(gameObject.transform.position, _player.transform.position);
     }
 
     private void OnDrawGizmos()

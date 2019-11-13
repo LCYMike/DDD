@@ -29,7 +29,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && _isHiding)
         {
             _isHiding = false;
             playerHide(false);

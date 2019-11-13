@@ -25,19 +25,25 @@ This experience is supposed be very grim and unsaturated.
 The reason why I'm using Unity and not another engine or something made from scratch is because I am more comfortable with the engine.
 I haven't used unreal engine yet and for this project I didn't want to use it because I don't need the extra graphical capabilities tho I will use it in the future to help practice my C++, but I may need to look the blueprint system of unreal engine as well.  
 
-as for making it from scratch, I have most of the knowledge to make this in javascript but it's more difficult to create the aproperiate colliders. furtheremore I want to be able to make save files and that's a lot harder using a
+as for making it from scratch, I have most of the knowledge to make this in javascript but it's more difficult to create the aproperiate colliders. furtheremore I want to be able to make save files and that's a lot harder using a.
 
 ## Documentation
 
 ## oject planning and organization
 [Trello](https://trello.com/b/v16yD2Fl/ddd)  
-[Documentation](https://github.com/MikeRaadsheer/DDD/tree/development/documentation/)
-Pr
-## Tools Used
+[Documentation](https://github.com/MikeRaadsheer/DDD/tree/development/documentation/)  
+
+## Tools and sources
 [Trello](https://trello.com/)  
 [Draw.io (_desktop_)](https://draw.io/)  
 [Open Office 365](https://products.office.com/en/excel)  
 [Gimp](https://www.gimp.org/downloads/)  
+sound effects [FreeSound](https://freesound.org/)  
+
+### Tutorials  
+
+[Collision Ignoring](https://www.youtube.com/watch?v=MKjWDtm5eeU) for the hiding function.
+
 
 ## Project Specifications
 Unity version: 2019.1.14f1

@@ -19,7 +19,7 @@ public class Item : MonoBehaviour {
     {
         if(stats == _item)
         {
-            Destroy(gameObject);
+            gameObject.GetComponent<ParticleSystem>().Stop();
         }
     }
 }
