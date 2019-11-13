@@ -12,10 +12,8 @@ public class EnemyAI : MonoBehaviour
 
     private bool _isChasing = false;
     private bool _seePlayer = false;
-    private bool _freeze = false;
     public bool _isActive = true;
-    public bool _isPlayerHiding = false;
-
+    private bool _freezeEnemy = false;
     public EnemyIdleState idleBehaviour;
     public EnemyFollowState followBehaviour;
 
@@ -24,13 +22,7 @@ public class EnemyAI : MonoBehaviour
     private States _state;
 
     private GameObject _player;
-    private Obstacle[] _obstacles;
     private BoxCollider2D _col;
-
-    private void SetCanMove(bool _freezeEntity)
-    {
-        _freeze = _freezeEntity;
-    }
 
     public void Activate()
     {
@@ -40,17 +32,15 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         _dialogue = FindObjectOfType<SetDialogueTxt>();
-        _dialogue.isActive += SetCanMove;
+        _dialogue.isActive += FreezeEnemy;
         _player = GameObject.FindGameObjectWithTag("Player");
-        _obstacles = FindObjectsOfType<Obstacle>();
         _col = GetComponent<BoxCollider2D>();
-
-        for (int i = 0; i < _obstacles.Length; i++)
-        {
-            _obstacles[i].playerHide += SetHiding;
-        }
     }
 
+    private void FreezeEnemy(bool _active)
+    {
+        _freezeEnemy = _active;
+    }
 
     private void FixedUpdate()
     {
@@ -97,7 +87,7 @@ public class EnemyAI : MonoBehaviour
             _seePlayer = false;
         }
 
-        if (!_freeze && _isActive)
+        if (_isActive && !_freezeEnemy)
         {
             SetBehaviour();
         }
@@ -114,12 +104,6 @@ public class EnemyAI : MonoBehaviour
         {
             idleBehaviour.Run();
         }
-    }
-
-    private void SetHiding(bool _isHiding)
-    {
-        CircleCollider2D _col = GetComponent<CircleCollider2D>();
-        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _player.GetComponent<Collider2D>(), _isHiding);
     }
 
     private float GetRange()

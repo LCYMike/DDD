@@ -6,37 +6,72 @@ public class PlayerHide : MonoBehaviour
 {
     private SpriteRenderer _rend;
 
-    private Obstacle[] _obstacles;
+    private GameObject[] _enemies;
 
+    [SerializeField]
     private bool _isHiding = false;
+    private bool _isNearObstacle = false;
 
     private void Awake()
     {
-        _rend = GetComponent<SpriteRenderer>();
-        _obstacles = FindObjectsOfType<Obstacle>();
-
-        for (int i = 0; i < _obstacles.Length; i++)
-        {
-            _obstacles[i].playerHide += ToggleIsHiding;
-        }
-    }
-
-    private void ToggleIsHiding(bool _hiding)
-    {
-        _isHiding = _hiding;
-        Debug.Log(_hiding);
+        _enemies = GameObject.FindGameObjectsWithTag("Enemy");
     }
 
     private void FixedUpdate()
     {
-        var _alpha = _rend.color.a;
-        if (_isHiding && _alpha > 0.5f)
+        if (_isNearObstacle)
         {
-            _rend.color -= new Color(0f, 0f, 0f, 0.7f);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+            _rend = GetComponent<SpriteRenderer>();
+                Debug.Log("E");
+
+
+                if (!_isHiding)
+                {
+                    _rend.color = new Color(0f, 0f, 0f, 0.6f);
+                    _isHiding = true;
+                    
+                    for (int i = 0; i < _enemies.Length; i++)
+                    {
+                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), _isHiding);
+                    }
+                }
+                else if (_isHiding)
+                {
+                    _rend.color = new Color(0f, 0f, 0f, 1f);
+                    _isHiding = false;
+
+                    for (int i = 0; i < _enemies.Length; i++)
+                    {
+                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), _isHiding);
+                    }
+                }
+
+            }
         }
-        else if (!_isHiding && _alpha < 1)
+        else if (_isHiding)
         {
             _rend.color += new Color(0f, 0f, 0f, 1f);
+            _isHiding = false;
         }
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Obstacle")
+        {
+            _isNearObstacle = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Obstacle")
+        {
+            _isNearObstacle = false;
+        }
+    }
+
+
 }

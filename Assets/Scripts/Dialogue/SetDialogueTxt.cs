@@ -36,14 +36,20 @@ public class SetDialogueTxt : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _isTyping)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return) && _isTyping && _isActive)
         {
-            //_skipTyping = true; // making sure fast typing is diasble using comments
+            if (_isTyping && _isActive)
+            {
+                _skipTyping = true;
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return) && !_isTyping && _isActive)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
         {
-            NextText();
+            if(!_isTyping && _isActive)
+            {
+                NextText();
+            }
         }
     }
 
@@ -58,7 +64,7 @@ public class SetDialogueTxt : MonoBehaviour
 
     public void NextText()
     {
-        if (_isTyping)
+        if (_isTyping && !_isActive)
         {
             return;
         }
@@ -70,6 +76,7 @@ public class SetDialogueTxt : MonoBehaviour
             StartCoroutine(TypeText());
         } else
         {
+            _isActive = false;
             isActive(_isActive);
             _txt.text = "";
 
@@ -81,7 +88,8 @@ public class SetDialogueTxt : MonoBehaviour
     IEnumerator TypeText()
     {
         _isTyping = true;
-        isActive(true);
+        _isActive = true;
+        isActive(_isActive);
         _txt.text = "";
         float speed = _typeSpeed;
         foreach (char letter in _sentences[index].ToCharArray())
