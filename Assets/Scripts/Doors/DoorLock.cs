@@ -9,12 +9,12 @@ public class DoorLock : MonoBehaviour
 
     public UnlockScript unlockScript;
 
-    public TextMesh hintTxt;
-
     private bool _isUnlocked = false;
 
+    public TextMesh hintTxt;
+
     public string key = "key-name";
-    public string txtValue = "Find Key";
+    public string txtValue = "Door's locked";
 
     private void Start()
     {
@@ -24,7 +24,6 @@ public class DoorLock : MonoBehaviour
 
     private void Unlock(ItemStats _item)
     {
-        Debug.Log(_item);
         if (_item != null)
         {
             if(_item.name == key)

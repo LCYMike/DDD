@@ -10,12 +10,14 @@ public class SetDialogueTxt : MonoBehaviour
     public GameObject continueBtn;
     public Image background;
     public Action<string[], bool> SetDialogue;
+    public Action<bool> isActive;
 
     public float _typeSpeed = 0.15f;
 
     private string[] _sentences;
     private int index = 0;
     private bool _isTyping = false;
+    private bool _isActive = false;
     private bool _skipTyping = false;
     private bool  _showContinueBtn = true;
 
@@ -44,7 +46,6 @@ public class SetDialogueTxt : MonoBehaviour
     private void StartText(string[] _texts, bool _hasContinueBtn)
     {
         background.enabled = true;
-        continueBtn.SetActive(true);
          _showContinueBtn = _hasContinueBtn;
         index = 0;
         _sentences = _texts;
@@ -60,6 +61,7 @@ public class SetDialogueTxt : MonoBehaviour
             StartCoroutine(TypeText());
         } else
         {
+            isActive(_isActive);
             _txt.text = "";
 
             background.enabled = false;
@@ -70,6 +72,7 @@ public class SetDialogueTxt : MonoBehaviour
     IEnumerator TypeText()
     {
         _isTyping = true;
+        isActive(true);
         _txt.text = "";
         float speed = _typeSpeed;
         foreach (char letter in _sentences[index].ToCharArray())

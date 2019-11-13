@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 673477608407022735}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 673477608418555877}
   m_RootOrder: 2
@@ -83,8 +83,8 @@ TextMesh:
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
-  m_TabSize: 4
-  m_FontSize: 8
+  m_TabSize: 8
+  m_FontSize: 16
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -167,7 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unlockScript: {fileID: 673477608418555876}
   hintTxt: {fileID: 673477608407022729}
-  key: Main Gate Key
+  key: Main Key
+  txtValue: Find the Main Key
 --- !u!114 &673477608418555876
 MonoBehaviour:
   m_ObjectHideFlags: 0

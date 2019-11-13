@@ -12,21 +12,34 @@ public class EnemyAI : MonoBehaviour
 
     private bool _isChasing = false;
     private bool _seePlayer = false;
+    private bool _freeze = false;
+    public bool _isActive = true;
 
     public EnemyIdleState idleBehaviour;
     public EnemyFollowState followBehaviour;
 
+    private SetDialogueTxt _dialogue;
+
     private States _state;
 
     private Transform _player;
-
     private Obstacle[] _obstacles;
-
     private BoxCollider2D _col;
 
-
-    private void Awake()
+    private void SetCanMove(bool _freezeEntity)
     {
+        _freeze = _freezeEntity;
+    }
+
+    public void Activate()
+    {
+        _isActive = true;
+    }
+
+    private void Start()
+    {
+        _dialogue = FindObjectOfType<SetDialogueTxt>();
+        _dialogue.isActive += SetCanMove;
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         _obstacles = FindObjectsOfType<Obstacle>();
         _col = GetComponent<BoxCollider2D>();
@@ -83,9 +96,10 @@ public class EnemyAI : MonoBehaviour
             _seePlayer = false;
         }
 
-        Debug.Log(followTime);
-
-        SetBehaviour();
+        if (!_freeze && _isActive)
+        {
+            SetBehaviour();
+        }
     }
 
     private void SetBehaviour()

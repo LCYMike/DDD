@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyIdleState : State
 {
 
-    private Vector2 _xZone = new Vector2(2f, 17f);
+    public Vector2 _xZone = new Vector2(-5f, 5f);
     private float _speed = 0.85f;
     private bool _goingLeft = true;
     private bool _inZone = true;
