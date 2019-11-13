@@ -11,11 +11,14 @@ public class OpenDoor : UnlockScript
     public SpriteRenderer openIcon;
     public SpriteRenderer lockIcon;
 
+    public GameObject TEMP_demoText;
+
     private bool _isOpen;
 
     private void Start()
     {
         openIcon.enabled = false;
+        TEMP_demoText.SetActive(false);
     }
 
     public override void Unlock()
@@ -32,7 +35,7 @@ public class OpenDoor : UnlockScript
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Woosh");
+               TEMP_demoText.SetActive(true);
             }
         }
     }

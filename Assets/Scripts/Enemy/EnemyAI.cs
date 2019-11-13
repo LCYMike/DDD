@@ -22,7 +22,8 @@ public class EnemyAI : MonoBehaviour
     private States _state;
 
     private GameObject _player;
-    private BoxCollider2D _col;
+    private Collider2D _col;
+    private Rigidbody2D _rb;
 
     public void Activate()
     {
@@ -34,7 +35,8 @@ public class EnemyAI : MonoBehaviour
         _dialogue = FindObjectOfType<SetDialogueTxt>();
         _dialogue.isActive += FreezeEnemy;
         _player = GameObject.FindGameObjectWithTag("Player");
-        _col = GetComponent<BoxCollider2D>();
+        _col = GetComponent<Collider2D>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     private void FreezeEnemy(bool _active)
@@ -44,6 +46,17 @@ public class EnemyAI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!_isActive)
+        {
+            _col.enabled = false;
+            _rb.simulated = false;
+        }
+        else
+        {
+            _col.enabled = true;
+            _rb.simulated = true;
+        }
+
         if (_player == null) { idleBehaviour.Run(); return; }
         float _range = GetRange();
 

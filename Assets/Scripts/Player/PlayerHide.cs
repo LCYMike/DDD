@@ -24,7 +24,6 @@ public class PlayerHide : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
             _rend = GetComponent<SpriteRenderer>();
-                Debug.Log("E");
 
 
                 if (!_isHiding)
@@ -34,7 +33,7 @@ public class PlayerHide : MonoBehaviour
                     
                     for (int i = 0; i < _enemies.Length; i++)
                     {
-                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), _isHiding);
+                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), true);
                     }
                 }
                 else if (_isHiding)
@@ -44,7 +43,7 @@ public class PlayerHide : MonoBehaviour
 
                     for (int i = 0; i < _enemies.Length; i++)
                     {
-                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), _isHiding);
+                        Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), false);
                     }
                 }
 
@@ -54,6 +53,10 @@ public class PlayerHide : MonoBehaviour
         {
             _rend.color += new Color(0f, 0f, 0f, 1f);
             _isHiding = false;
+            for (int i = 0; i < _enemies.Length; i++)
+            {
+                Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), _enemies[i].GetComponent<Collider2D>(), false);
+            }
         }
     }
 
