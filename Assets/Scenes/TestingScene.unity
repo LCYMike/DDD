@@ -335,9 +335,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b249cfb3acdd83040b2c2488015dc663, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.42
-  m_Pitch: 0.3
-  Loop: 1
+  m_Volume: 0.15
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -409,7 +409,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.76
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -873,7 +873,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3a4871dba74a7ac449dee321f7a57481, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.22
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1091,7 +1091,7 @@ PrefabInstance:
     - target: {fileID: 2702537804557798375, guid: fbb1abde5a288634c981851484525541,
         type: 3}
       propertyPath: texts.Array.data[0]
-      value: Was that there alradsy?
+      value: Was that there already?
       objectReference: {fileID: 0}
     - target: {fileID: 2702537804557798375, guid: fbb1abde5a288634c981851484525541,
         type: 3}
@@ -1532,6 +1532,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219786710}
   m_CullTransparentMesh: 0
+--- !u!1 &1250166277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250166280}
+  - component: {fileID: 1250166279}
+  - component: {fileID: 1250166278}
+  m_Layer: 0
+  m_Name: DebugTools
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1250166278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250166277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7840a19092f49f545844340e1e59eac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1250166279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250166277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d54c0520f029a4448822ce5fe139897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1250166280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250166277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.551289, y: -3.3058467, z: -0.7433594}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1378315054
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,7 +2129,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Boom You win.
+  m_Text: 'Boom that was the demo.
 
 
     I''d love to add another level but I want to
