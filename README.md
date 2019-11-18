@@ -25,27 +25,27 @@ This experience is supposed be very grim and unsaturated.
 
 ### Unity  
 
-	| Pro's | Con's |
-	| ----- | ----- |
-	| Quick and easy learning curve | Over simplified UI |
-	| Automatic Memory management (C#) | some areas lack documentation |
-	| Build to any platform | Very slow later in development |
+| Pro's | Con's |
+| ----- | ----- |
+| Quick and easy learning curve | Over simplified UI |
+| Automatic Memory management (C#) | some areas lack documentation |
+| Build to any platform | Very slow later in development |
 
 ### Unreal
 
-	| Pro's | Con's |
-	| ----- | ----- |
-	| Lot's of flexibility and control | More difficult to learn |
-	| Great level design tools | Less online tutorials and documentation |
-	| Open source | smaller community |
+| Pro's | Con's |
+| ----- | ----- |
+| Lot's of flexibility and control | More difficult to learn |
+| Great level design tools | Less online tutorials and documentation |
+| Open source | smaller community |
 
 ### JavaScript
 
-	| Pro's | Con's |
-	| ----- | ----- |
-	| Simple and fast to learn and use | Security |
-	| Cross platform | Browser Interpretation |
-	| Excellent documentation and community | Rely on libraries |
+| Pro's | Con's |
+| ----- | ----- |
+| Simple and fast to learn and use | Security |
+| Cross platform | Browser Interpretation |
+| Excellent documentation and community | Rely on libraries |
 
 ## Planning and organization
 [Trello](https://trello.com/b/v16yD2Fl/ddd)  
