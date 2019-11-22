@@ -5,7 +5,18 @@ Small Storytelling Game
 D.D.D. is a game where you follow someone trough their live and see how it starts and ends.  
 Some stories can be sad and unfair while others are just your average old man who just got old but didn't have the best ending.  
 
+  
+## Inspiration
+I always wanted to make a story telling game where you create the story by playing the game. This experience is supposed be a little eerie because the Player is told very little and is unable to fight enemies and can therefore only run and hide.
+
 ## Learning Goals
+
+* Collision ignoring
+* Reusable inventory and items
+* Stats for characters and items
+* Reusable enemy A.I. using a FSM
+
+## Features
 | Technique / Mechanic | Description | Status |
 | ----- | ----- | ----- |
 | Obstacles | objects the player can walk up to and hide. if the enemy is far enough it won't see you hide and return but if it did see you hide it'll keep chasing the player. | Done |
@@ -28,16 +39,11 @@ When in a portal or using an item the player can gain the ability to move in a s
   
 #### Enemy AI
 The enemies need to have more than 2 brain cells and have the ability to spot the player and chase it, once far enough the enemy will lose the player and be unable to see is hide.
-  
-## Inspiration
-I always wanted to make a story telling game about someone who is in this dreadful situation...  
-A pit of despair. Someone who can't fight back but only run and hide.  
-I want to make a game that makes you the player decide the story.  
-Depending on those choises good things can happen and it can all disappear.  
-This experience is supposed be very grim and unsaturated.  
+
+#### Inventory and Usable Items
+I've made simple inventory scripts bevore nut that was always online console and text based. I wanted a system for picking up and using Items with specific stats working with the player stats. 
 
 ## Software Analysis  
-
 
 ### Unity  
 
