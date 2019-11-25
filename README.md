@@ -2,8 +2,7 @@
 Small Storytelling Game
 
 ## Game Description
-D.D.D. is a game where you follow someone trough their live and see how it starts and ends.  
-Some stories can be sad and unfair while others are just your average old man who just got old but didn't have the best ending.  
+D.D.D. is a 2D game with simple anmechanics that come together to making a interesting interactive pizzle level where the story is created by the choises of the player. The hame has a eerie vibe bus isn't scary in and of itself.  
 
   
 ## Inspiration
@@ -47,7 +46,7 @@ I've made simple inventory scripts bevore nut that was always online console and
 
 ### Unity  
 
-Unity is an extremely user friendly engine made for beginners as well as experienced developers, the engine compiles really fast so making small changes isn't a problem but as a project grows using the profiler and managing the garbage collector is essential. It has many tools and since the new update it's only gotten better and more powerfull, good examples are the new rendering pipelines and shader graph for an easy way to create amazing shaders using nodes and unity also had a tool for node based programming. the UI is about as flexible as it gets but it can be a little restrictive with it's simplicity but since Unity 2019.1 there is also UIElements as a public API which allowes developers to make the UI look any way they want. The components in unity are simple to use to make collision, sound and GUI very easy to implement. Once your project is ready to build you can build it for varying platforms with minimal changes. the biggest disatvantage of unity is the lack of documentation but there are a lot of people who are alway's able to help others like you and me.  
+Unity is an extremely user friendly engine made for beginners as well as experienced developers, Unity is more 2D focussed and had even got a seperate compact engine for small 2D games but the 3D capabilities are really stunning as well. The engine compiles really fast so making small changes isn't a problem but as a project grows using the profiler and managing the garbage collector is essential. It has many tools and since the new update it's only gotten better and more powerfull, good examples are the new rendering pipelines and shader graph for an easy way to create amazing shaders using nodes and unity also had a tool for node based programming. the UI is about as flexible as it gets but it can be a little restrictive with it's simplicity but since Unity 2019.1 there is also UIElements as a public API which allowes developers to make the UI look any way they want. The components in unity are simple to use to make the implemantation of collision extremely easy for both 2D and 3D, sound and GUI very easy to implement as well and once your project is ready to build you can build it for varying platforms with minimal to no changes. the biggest disatvantage of unity is the lack of documentation but there are a lot of people who are alway's able to help others like you and me.  
 
  
 | Pro's | Con's |
@@ -60,7 +59,7 @@ Unity is an extremely user friendly engine made for beginners as well as experie
 
 ### Unreal
 
-Unreal is a powerful engine with a lot of freedom. The engine is a little harder to get started with for beginners because there are so many options but, because there are so many option experienced developers will have a lot more control and unreal also had great characteristics for the different types of graphics making it suitable some Triple-A games, the engine also has easy to use tools for artist to use with little knowledge of the engine. Epic Games (owners of the engine and Fortnite) makes a lot of money and uses it bring constant updated to the engine and new features as well, they also do weekly livestreams and events for the community. 
+Unreal is a powerful engine with a lot of freedom. The engine is a little harder to get started with for beginners because there are so many options but, because there are so many option experienced developers will have a lot more control and unreal also had great characteristics for the different types of graphics making it suitable some Triple-A games, the engine also has easy to use tools for artist and developers to use with little knowledge of the engine or programming at all, blueprints are a great feature to create some awesome scripts with visual coding. The engine is better for 3D than 2D and that really shows especially with physics and graphics. Epic Games (owners of the engine and Fortnite) makes a lot of money and uses it bring constant updated to the engine and new features as well, they also do weekly livestreams and events for the community. 
 
 | Pro's | Con's |
 | --- | --- |
@@ -80,7 +79,11 @@ Javascript is a graet language to make simple 2d games on any browser, there is 
 
 ### Why I picked Unity?
 
-Unity has some benefits when you're working on a smaller game and financially as well. unline the 5% cut (when profitable aboke $30.000~) of unreal engine, for unity you don't need to pay anything unless your game makes over $100.000, when this it the case you need to use the pro version which is not that expencive, gives you more features and is way cheaper than the ammout most others engines take. The engine works with C# which is a scripted language meaning you can make minor changes while running the same but more importantly that the game builds really fast when developing, the other benefits of C# is that is does a lot of the memory management automatically unlike languages such as C++, this gives you less control but for most games this works perfectly fine and the only thing you need to really manage is the garbage collector with the free profiler tool.  
+Unity has some benefits when you're working on a smaller game and financially as well. unline the 5% cut (when profitable aboke $30.000~) of unreal engine, for unity you don't need to pay anything unless your game makes over $100.000, when this it the case you need to use the pro version which is not that expencive, gives you more features and is way cheaper than the ammout most others engines take.
+
+Unity is mainly focussed on 2D games and has a seperate engine which is ectremely small, for this project I choose the full unity 3D engine for the possibility of adding 3D in the game to mix things up and give me as the developer more freedom to experiment with features.
+
+The engine works with C# which is a scripted language meaning you can make minor changes while running the same but more importantly that the game builds really fast when developing, the other benefits of C# is that is does a lot of the memory management automatically unlike languages such as C++, this gives you less control but for most games this works perfectly fine and the only thing you need to really manage is the garbage collector with the free profiler tool.  
 
 The biggest benefit by far when using unity is the gigantic community, whenever you hit a wall there's almost alway's a tutorial or form where you can find the answer to your problem. but to me Unity is the natural choice for a small game for it's simplicity and the fact I have over 4+ years years of experience with the engine. 
   
